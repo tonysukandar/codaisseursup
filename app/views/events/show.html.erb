@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @event.name %></div>
+
+  <div class="panel-body">
+
+    <p>Description: <%= @event.description %></p>
+
+    <!-- Main Info -->
+    <h4>Main Info</h4>
+    <p><%= @event.price %> euro</p>
+    <p><%= @event.capacity %> <%= @event.capacity > 1 ? "persons" : "person" %></p>
+
+    <!-- About -->
+    <h4>About</h4>
+    <p><%= @room.location %></p>
+
+    <!-- Amenities -->
+    <h4>Amenities</h4>
+    <ul class="amenities">
+      <li><%= !@event.includes_food ? ("<del>Includes food</del>").html_safe : "Includes food" %></li>
+      <li><%= !@event.includes_drinks ? ("<del>Includes drinks</del>").html_safe : "Includes drinks" %></li>
+    </ul>
+  </div>
+
+</div>
+
+<%= link_to "Back", rooms_path, class: "btn btn-default" %>
