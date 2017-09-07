@@ -17,11 +17,16 @@
     <p><img src="<%= @event.image_link %>"></p>
     <p><%= @event.image_link %></p>
 
+    <!-- Photos -->
     <h4>Photos</h4>
     <% @event.photos.each do |photo| %>
-      <%= image_tag photo.image %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= image_tag photo.image.thumbnail %>
+      </div>
+    </div>
     <% end %>
-    
+
     <!-- Amenities -->
     <h4>Amenities</h4>
     <ul class="amenities">
