@@ -40,6 +40,8 @@ gem 'jquery-rails', '~> 4.3.1'
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
 
+# CarrierWave
+gem 'carrierwave', '0.11.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,6 +53,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
