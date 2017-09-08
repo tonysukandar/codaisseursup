@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   has_one :profile
 
+  has_many :registrations, dependent: :destroy
+  has_many :booked_events, through: :registrations, source: :event
+
   def has_profile?
     profile.present? && profile.persisted?
   end
